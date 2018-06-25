@@ -1,0 +1,39 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClassDiagramMaker.NET"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls" x:Class="ClassDiagramMaker.NET.MainWindow"
+        mc:Ignorable="d"
+        Title="ClassDiagramMaker" Height="600" Width="800">
+    <Grid>
+        <DockPanel>
+            <ToolBarTray Orientation="Vertical" DockPanel.Dock="Left" >
+                <ToolBar Height="{Binding ActualHeight, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ToolBarTray}}}" Margin="0,0,0,0.4" Width="155" Background="#FF393A3A">
+                    <StackPanel>
+                        <Button Margin="2,12,2,12" 
+                                Width="127" 
+                                Height="50" 
+                                PreviewMouseDown="ButtonClass_PreviewMouseDown"
+                                PreviewGiveFeedback="Button_PreviewGiveFeedback"
+                                MouseMove="Button_MouseMove"
+                                Background="WhiteSmoke" FontFamily="Segoe Print" FontSize="16" Content="Class" FontWeight="Bold"/>
+                        <Button Margin="2,10,2,10" 
+                                Width="127" 
+                                Height="50" 
+                                Background="WhiteSmoke" FontFamily="Segoe Print" FontSize="16" Content="Connector" FontWeight="Bold"/>
+                    </StackPanel>
+                </ToolBar>
+            </ToolBarTray>
+            <Canvas x:Name="CanvasBoard"
+                    AllowDrop="True"
+                    Drop="CanvasBoard_Drop"
+                    Background="#FF274A6C"
+                    MouseLeftButtonDown="CanvasBoard_MouseLeftButtonDown"
+                    MouseMove="CanvasBoard_MouseMove"
+                    MouseLeftButtonUp="CanvasBoard_MouseLeftButtonUp"
+                    />
+        </DockPanel>
+    </Grid>
+</Window>
