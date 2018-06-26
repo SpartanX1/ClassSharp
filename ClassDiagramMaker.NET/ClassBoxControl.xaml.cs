@@ -28,18 +28,31 @@ namespace ClassDiagramMaker.NET
             InitializeComponent();
         }
 
-    
+
         private void ButtonAddVariable_Click(object sender, RoutedEventArgs e)
         {
             var newClassVar = new TextBox
             {
-                Text = "var name : type"
+                Text = "var name : type",
+                Padding = new Thickness(2, 2, 2, 2)
+            };
+       
+            VariablePanel.Children.Remove(AddVarBtn);
+            VariablePanel.Children.Add(newClassVar);
+            VariablePanel.Children.Add(AddVarBtn);
+        }
+
+        private void ButtonAddFunction_Click(object sender, RoutedEventArgs e)
+        {
+            var newClassFunc = new TextBox
+            {
+                Text = "func name : return type",
+                Padding = new Thickness(2, 2, 2, 2)
             };
 
-       
-            VariablePanel.Children.Remove(AddBtn);
-            VariablePanel.Children.Add(newClassVar);
-            VariablePanel.Children.Add(AddBtn);
+            FuntionPanel.Children.Remove(AddFuncBtn);
+            FuntionPanel.Children.Add(newClassFunc);
+            FuntionPanel.Children.Add(AddFuncBtn);
         }
     }
 }

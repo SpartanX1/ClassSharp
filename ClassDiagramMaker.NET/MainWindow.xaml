@@ -26,6 +26,7 @@
                     </StackPanel>
                 </ToolBar>
             </ToolBarTray>
+            
             <Canvas x:Name="CanvasBoard"
                     AllowDrop="True"
                     Drop="CanvasBoard_Drop"

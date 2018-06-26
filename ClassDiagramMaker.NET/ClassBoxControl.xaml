@@ -4,16 +4,19 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ClassDiagramMaker.NET"
-             mc:Ignorable="d" 
-             >
-    <DockPanel  Background="White">
-        <TextBox FontFamily="Segoe Print" DockPanel.Dock="Top" Padding="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF51595D" Foreground="#FFF6F5F5">
-            Class Name
-        </TextBox>
-        <StackPanel Orientation="Vertical" x:Name="VariablePanel" DockPanel.Dock="Top" MinHeight="30">
-            <Button x:Name="AddBtn" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="4,5,0,0" HorizontalAlignment="Left" MinWidth="20" FontWeight="ExtraBold" Background="LightGreen" Click="ButtonAddVariable_Click">+</Button>
-        </StackPanel>
-        <StackPanel x:Name="FuntionPanel" DockPanel.Dock="Top">
-        </StackPanel>
-    </DockPanel>
+             mc:Ignorable="d" >
+    <Border BorderBrush="Black" BorderThickness="1">
+        <DockPanel  Background="White">
+            <TextBox FontFamily="Segoe Print" DockPanel.Dock="Top" Padding="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF51595D" Foreground="#FFF6F5F5">
+                Class Name
+            </TextBox>
+            <StackPanel DockPanel.Dock="Top" Orientation="Vertical" x:Name="VariablePanel" MinHeight="32">
+                <Button x:Name="AddVarBtn" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="4,5,0,4" HorizontalAlignment="Left" MinWidth="20" FontWeight="ExtraBold" Background="LightGreen" Click="ButtonAddVariable_Click">+var</Button>
+            </StackPanel>
+            <Grid DockPanel.Dock="Top" Background="Black" Height="1"></Grid>
+            <StackPanel Orientation="Vertical" x:Name="FuntionPanel" DockPanel.Dock="Top" MinHeight="32">
+                <Button x:Name="AddFuncBtn" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="4,5,0,4" HorizontalAlignment="Left" MinWidth="20" FontWeight="ExtraBold" Background="LightGreen" Click="ButtonAddFunction_Click">+func</Button>
+            </StackPanel>
+        </DockPanel>
+    </Border>
 </UserControl>
